@@ -129,28 +129,15 @@
             <p class="p-body">You can download the Tencent-MVSE dataset from <a href="https://share.weiyun.com/uylphOeo">here</a>.</p>
             <p class="p-body">The folder is in the following architecture:</p>
                   <pre class="prettyprint lang-bsh">
-tencent-mvse/
+CathAction-datasets/
 ├── annotations
-│   ├── pairwise.json
-│   ├── pairwise.tsv
-│   ├── pointwise.json
-│   ├── test-dev.json
-│   ├── test_dev.tsv
-│   ├── test-std.json
-│   └── test_std.tsv
-└── features
-    ├── clip
-    │   ├── pairwise.zip
-    │   ├── pointwise_0.zip
-    │   ├── pointwise_1.zip
-    │   ├── ...
-    │   ├── pointwise_20.zip
-    │   ├── test-dev.zip
-    │   └── test-std.zip
-    ├── efficientnetb3
-    │   └── ...
-    └── resnet50
-        └── ...
+│   ├── training_clip.csv
+│   ├── validation_clip.csv
+└── rgn-frames
+│   ├── frames.zip
+└── labels-collision-boxes
+    ├── labels.zip
+
 </pre>
 <p class="p-body">where *.json store the meta-data, *.tsv are annotation scores, and *.zip contain video features.</p>
           </div>
