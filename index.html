@@ -110,7 +110,7 @@
           <div class="col-xs-10 col-xs-offset-1">
             <h2 class="p-title"><b>Abtracts</b></h2>
             <p class="p-body">
-              We proposed the CathAction Dataset, a benchmark for Endovascular Catheterization understanding. I proposed an architecture method that combines an Efficient Transformer-based on an efficient
+              We proposed the CathAction Dataset, a benchmark for Endovascular Catheterization understanding. We proposed an architecture method that combines an Efficient Transformer-based on an efficient
               local spatial-temporal separation attention mechanism and DETR-Object Detection with Transformers for catheter action anticipation and collision localization task.
               Besides, to encourage research into endovascular catheterization action in more realistic scenarios, 
               we have built an Endovascular Catheterization action dataset consisting of well-defined endovascular catheterization action annotations and bounding-box collision 
@@ -126,12 +126,14 @@
           <div class="col-xs-10 col-xs-offset-1">
             <h2 class="p-title"><b>Overview</b></h2>
             <p class="p-body">
-              Tencent-MVSE is a large-scale benchmark dataset for the multi-modal video similarity evaluation task. The features of Tencent-MVSE includes
+              CathAction is a benchmark dataset for the Endovascular Catheterization understanding task. The features of CathAction includes
               <ul>
-                <li>A total of 1,135,705 videos, including 1 million videos for unsupervise pre-training 63,613 videos for training, and 63,960 videos for evaluation.</li>
-                <li>Rich meta-data for each video, including title, ASR text, categories, and tags.</li>
-                <li>We annotate 67,854 video pairs for training and 67,887 video pairs for evaluation.</li>
-                <li>The 328 categories and 64,903 tags are all manually annotated by human.</li>
+                <li>A total of 569 videos, consists of 2,523 action segments that were extracted from 569 lengthy videos. Videos that did not contain
+                any events or actions were excluded from the dataset.</li>
+                <li> We annotate a total of 54, 158 bounding boxes were collected for normal or collision action classes, and both
+                  collision-class and normal-class bounding boxes were used  in reporting results for the collision localization challenge..</li>
+                <li>The training subset includes $2,144$ action segments and their related bounding boxes, while the testing subset contains $379$ action segments and their related bounding boxes.</li>
+                <li>The CathAction dataset includes data on the different actions taken during endovascular catheterization procedures, with each action being classified into one of five categories: rotate, advance guidewire, retract catheter, retract guidewire, and advance catheter..</li>
               </ul>
             </p>
             <br>
@@ -144,7 +146,7 @@
         <div class="container">
           <div class="col-xs-10 col-xs-offset-1">
             <h2 class="p-title"><b>Download</b></h2>
-            <p class="p-body">You can download the Tencent-MVSE dataset from <a href="https://share.weiyun.com/uylphOeo">here</a>.</p>
+            <p class="p-body">You can download the CathAction dataset from <a href="https://share.weiyun.com/uylphOeo">here</a>.</p>
             <p class="p-body">The folder is in the following architecture:</p>
                   <pre class="prettyprint lang-bsh">
 CathAction-datasets/
