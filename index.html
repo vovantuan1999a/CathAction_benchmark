@@ -1,362 +1,211 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="description"
-        content="OpenScene: 3D Scene Understanding with Open Vocabularies">
-  <meta name="keywords" content="OpenScene">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--for thumbnail-->
-  <meta property="og:image" content="media/openscene/teaser.jpg">
-  <meta property="og:url" content="https://pengsongyou.github.io/openscene">
-  <meta property="og:description" content="3D Scene Understanding with Open Vocabularies">
-  <title>OpenScene</title>
+<html lang="zh-CN" style="overflow-y: visible;">
+  <head>
+    <title>Tencent-MVSE</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="static/css/prettify.css">
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/run_prettify.js"></script>
+    <style type="text/css">
+      #jumbotron {
+        background-size: cover;
+        margin-top: -20px;
+        margin-bottom: 0;
+        padding: 0;
+      }
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+      .p-body {
+        text-align: justify;
+        font-family: "Arial", sans-serif;
+        font-size: 120%;
+      }
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
+      .timeline-li {
+        font-family: "Arial", sans-serif;
+        font-size: 120%;
+      }
 
-    gtag('js', new Date());
+      .thumbnail {
+        border-color: transparent;
+        background-color: transparent;
+      }
 
-    gtag('config', 'G-PYVRSFMDRL');
+      .avatar {
+        border-radius: 50%;
+      }
 
+      #morning {
+        color: orange;
+      }
 
+      #overview {
+        background-color: #e8e8e8;
+      }
 
-  </script> -->
+      #download {
+        background-color: white;
+      }
 
-<link rel="icon" type="image/png" href="media/openscene/logo.png"> 
-<link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+      #statistics {
+        background-color: #e8e8e8;
+      }
 
-  <link rel="stylesheet" href="./media/nice-slam/css/bulma.min.css">
-  <link rel="stylesheet" href="./media/nice-slam/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./media/nice-slam/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./media/nice-slam/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./media/nice-slam/css/index.css">
+      #citation {
+        background-color: white;
+      }
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./media/nice-slam/js/fontawesome.all.min.js"></script>
-  <script src="./media/nice-slam/js/bulma-carousel.min.js"></script>
-  <script src="./media/nice-slam/js/bulma-slider.min.js"></script>
-  <script src="./media/nice-slam/js/index.js"></script>
-</head>
-<body>
+      #block6 {
+        background-color: #e8e8e8;
+      }
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://pengsongyou.github.io">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://pengsongyou.github.io/conv_onet">
-            ConvONet - ECCV 2020
-          </a>
-          <a class="navbar-item" href="https://pengsongyou.github.io/sap">
-            Shapt As Points - NeurIPS 2021
-          </a>
-          <a class="navbar-item" href="https://pengsongyou.github.io/nice-slam">
-            NICE-SLAM - CVPR 2022
-          </a>
+      #block8 {
+        background-color: #080808;
+      }
+    </style>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("body").scrollspy({target:"#navbar"})
+      })
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse" id="navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
         </div>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#overview">Overview</a></li>
+            <li><a href="#download">Download</a></li>
+            <li><a href="#statistics">Statistics</a></li>
+            <li><a href="#citation">Citation</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="jumbotron" id="jumbotron">
+      <div class="mengban">
+        <center>
+<!--           <br><br><br><br><br><br><br><br>
+          <h1 id="morning">Tencent-MVSE</h1> -->
+          <img src="static/img/cover.png" width="100%">
+        </center>
       </div>
     </div>
 
-  </div>
-</nav>
+    <div class="container-fluid">
 
-
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <!-- <div class="columns is-centered">
-        <div class="column is-7 has-text-centered">
-          <img src="media/nice-slam/nice-slam-logo2.png" alt="NICE-SLAM"/>
-        </div>
-      </div> -->
-        <div class="column has-text-centered">
-          <!-- <h1 class="title is-1 publication-title"><img src="media/nice-slam/like.png" width="90">NICE-SLAM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>Neural Implicit Scalable Encoding for SLAM</h1> -->
-          <h1 class="title is-1 publication-title"><img src="media/openscene/logo.png" width="70">OpenScene&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
-          <h1 class="title is-2 publication-title">3D Scene Understanding with Open Vocabularies</h1>
-          <div class="column is-full_width">
-            <h2 class="title is-4">CVPR 2023</h2>
-          </div>
-          <!-- <br> -->
-          <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <a href="https://pengsongyou.github.io">Songyou Peng</a><sup>1,2,3 * </sup></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </span>
-              <span class="author-block">
-              <a href="https://www.kylegenova.com/">Kyle Genova</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </span>
-            <span class="author-block">
-              <a href="https://www.maxjiang.ml/">Chiyu "Max" Jiang</a><sup>4</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="author-block">
-              <a href="https://taiya.github.io/">Andrea Tagliasacchi</a><sup>1,5</sup>
-            </span><br>
-            <span class="author-block">
-              <a href="https://people.inf.ethz.ch/pomarc/">Marc Pollefeys</a><sup>2</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span>
-            <span class="author-block">
-              <a href="https://www.cs.princeton.edu/~funk/">Thomas Funkhouser</a><sup>1</sup>
-            </span>
-          </div>
-          <br>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Google Research</span>&nbsp;&nbsp;
-            <span class="author-block"><sup>2</sup>ETH Zurich</span>&nbsp;&nbsp;
-            <span class="author-block"><sup>3</sup>MPI for Intelligent Systems, Tübingen</span>&nbsp;&nbsp;<br>
-            <span class="author-block"><sup>4</sup>Waymo LLC</span>&nbsp;&nbsp;
-            <span class="author-block"><sup>5</sup>Simon Fraser University</span>
-          </div>
-
-          <div class="column is-full_width">
-            <h2 class="is-size-6">(* Work done while Songyou was an intern at Google Research.)</h2>
-          </div>
-
-
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2211.15654" target="_blank"
-                   class="button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <!-- Supp Link. -->
-              <!-- <span class="link-block">
-                <a href="xxx" target="_blank"
-                   class="button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Supplementary Material</span>
-                </a>
-              </span> -->
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="https://youtu.be/jZxCLHyDJf8"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-               <span class="link-block">
-                <a href="https://github.com/pengsongyou/openscene" target="_blank"
-		   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span >Code</span>
-                  </a>
-              </span> 
-            </div>
-
-          </div>
-        </div>
-    </div>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <img src="media/openscene/teaser.jpg" class="center"/>
-      <br><br>
-      <h2 class="subtitle has-text-centered">
-      <strong>OpenScene</strong> is a zero-shot approach to perform novel 3D scene understanding tasks with open-vocabulary queries.
-    </h2>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-        <!-- Paper video. -->
-        <div class="columns is-centered has-text-centered">
-          <!-- <div class="column is-four-fifths"> -->
-            <div class="column is-full_width">
-            <h2 class="title is-3">Explanatory Video</h2>
-            <div class="publication-video">
-              <iframe src="https://www.youtube.com/embed/jZxCLHyDJf8?rel=0&amp;showinfo=0"
-                      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                <!-- <video id="dollyzoom" controls loop width="100%">
-                  <source src="media/openscene/OpenScene_video_full_compressed.mp4"
-                          type="video/mp4">
-                </video> -->
-            </div>
-          </div>
-        </div>
-        <!--/ Paper video. -->
-      
-    <br>
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            <b>TL;DR: We present OpenScene, a zero-shot approach to perform novel 3D scene understanding tasks with open-vocabulary queries.</b>
-          </p>
-          <p>
-            Traditional 3D scene understanding approaches rely on
-            labeled 3D datasets to train a model for a single task with
-            supervision. We propose OpenScene, an alternative approach where a model predicts dense features for 3D scene
-            points that are co-embedded with text and image pixels in
-            CLIP feature space. This zero-shot approach enables taskagnostic training and open-vocabulary queries. For example, to perform SOTA zero-shot 3D semantic segmentation
-            it first infers CLIP features for every 3D point and later
-            classifies them based on similarities to embeddings of arbitrary class labels. More interestingly, it enables a suite
-            of open-vocabulary scene understanding applications that
-            have never been done before. For example, it allows a user
-            to enter an arbitrary text query and then see a heat map
-            indicating which parts of a scene match. Our approach is
-            effective at identifying objects, materials, affordances, activities, and room types in complex 3D scenes, all using a
-            single model trained without any labeled 3D data.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Key Idea -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <hr>
-        <h2 class="title is-3">Key Idea</h2>
-        <br>
-        <img src="media/openscene/coembedding.jpg" class="center"/>
-        <div class="content has-text-justified">
-          <br>  
-          <p>
-            Our key idea to address this broad set of applications is to compute a task-agnostic feature vector for every 3D point that is co-embedded with text and images pixels in the CLIP feature space.
-            After, we can use the structure of the CLIP feature space to reason about properties of 3D points in the scene.
-          </p>
-        </div>
-      </div>
-    </div>
-    <hr>
-    
-      <!-- Method -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Method</h2>
-          <br>
-          <img src="media/openscene/overview.png" class="center"/>
-          <div class="content has-text-justified">
-            <br>  
-            <p>
-              <strong>How to produce text-image-3D co-embeddings?</strong>
-              <br>  
-              1. <em>Multi-view feature fusion</em>. Given a point in a 3D scene and its corresponding posed images, we first use the CLIP-based image semantic segmentation model (LSeg/OpenSeg) to extract per-pixel features for every image, and then use multi-view fusion with weighted averaging to project the fused feature to 3D points.
-              <br>  
-              2. <em>3D Distillation</em>. To take full advantage of the 3D nature of the data, we also distill a 3D Sparse UNet, with a cosine similarity loss to predict the 2D fused features from only 3D point positions.
-              <br>  
-              3. <em>2D-3D Ensemble</em>. we ensemble the 2D fused and 3D distilled features to a single feature vector for every point based on similarity scores to a labelset.
-
+      <div class="row" id="overview">
+        <div class="container">
+          <div class="col-xs-10 col-xs-offset-1">
+            <h2 class="p-title"><b>Overview</b></h2>
+            <p class="p-body">
+              Tencent-MVSE is a large-scale benchmark dataset for the multi-modal video similarity evaluation task. The features of Tencent-MVSE includes
+              <ul>
+                <li>A total of 1,135,705 videos, including 1 million videos for unsupervise pre-training 63,613 videos for training, and 63,960 videos for evaluation.</li>
+                <li>Rich meta-data for each video, including title, ASR text, categories, and tags.</li>
+                <li>We annotate 67,854 video pairs for training and 67,887 video pairs for evaluation.</li>
+                <li>The 328 categories and 64,903 tags are all manually annotated by human.</li>
+              </ul>
             </p>
+            <br>
           </div>
         </div>
       </div>
-  
-    
-      <!-- Applications.-->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full_width">
-        <h2 class="title is-3">Demo</h2>
-      </div>
-    </div>
-      <video id="dollyzoom" controls muted loop height="100%">
-        <source src="media/openscene/demo_full_compressed.mp4"
-                type="video/mp4">
-      </video>
-      Here we show a <strong>real-time, interactive open-vocabulary search tool</strong>
-where a user types in an arbitrary query phrase in the upper left of the screen,
-like "floor" or "bed" or "toilet",
-and the tool colors all 3D points based on the similarities of their
-features to the CLIP encoding of the query.
-Yellow is <strong><span style="color:#e5de00;">highest</span></strong> similarity, green is <strong><span style="color:#008000;">middle</span></strong>, blue is <strong><span style="color:#0000FF;">low</span></strong>, and uncolored is lowest.
 
-</div>
-</section>
-
-
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@inproceedings{Peng2023OpenScene,
-      title     = {OpenScene: 3D Scene Understanding with Open Vocabularies},
-      author    = {Peng, Songyou and Genova, Kyle and Jiang, Chiyu "Max" and Tagliasacchi, Andrea and Pollefeys, Marc and Funkhouser, Thomas},
-      booktitle = CVPR,
-      year      = {2023}
-  }</code></pre>
-  </div>
-</section>
-
-<section class="section" id="Acknowledgements">
-  <div class="container is-max-desktop content">
-    <h2 class="title">Acknowledgements</h2>
-    We sincerely thank Golnaz Ghiasi for providing guidance of using OpenSeg model. We also thank Huizhong Chen, Yin Cui, Tom Deurig, Dan Gnanapragasam, Xiuye Gu, Leonidas Guibas,
-Nilesh Kulkarni, Abhijit Kundu, Hao-Ning Wu, Louis Yang, Guandao Yang, Xiaoshuai Zhang, Howard Zhou, and Zihan Zhu for helpful discussion. We are thankful for the proofreading by Charles R. Qi and Paul-Edouard Sarlin.
-    The project logo was created by <a href="https://www.flaticon.com/free-icon/door_2237440?term=door&page=1&position=2&page=1&position=2&related_id=2237440&origin=tag" title="door icons">Door icons created by Good Ware - Flaticon</a>.
-  </div>
-</section>
-
-
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-            This webpage template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. 
-            We sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for developing and open-sourcing this template.
-          </p>
+      <div class="row" id="download">
+        <div class="container">
+          <div class="col-xs-10 col-xs-offset-1">
+            <h2 class="p-title"><b>Download</b></h2>
+            <p class="p-body">You can download the Tencent-MVSE dataset from <a href="https://share.weiyun.com/uylphOeo">here</a>.</p>
+            <p class="p-body">The folder is in the following architecture:</p>
+                  <pre class="prettyprint lang-bsh">
+tencent-mvse/
+├── annotations
+│   ├── pairwise.json
+│   ├── pairwise.tsv
+│   ├── pointwise.json
+│   ├── test-dev.json
+│   ├── test_dev.tsv
+│   ├── test-std.json
+│   └── test_std.tsv
+└── features
+    ├── clip
+    │   ├── pairwise.zip
+    │   ├── pointwise_0.zip
+    │   ├── pointwise_1.zip
+    │   ├── ...
+    │   ├── pointwise_20.zip
+    │   ├── test-dev.zip
+    │   └── test-std.zip
+    ├── efficientnetb3
+    │   └── ...
+    └── resnet50
+        └── ...
+</pre>
+<p class="p-body">where *.json store the meta-data, *.tsv are annotation scores, and *.zip contain video features.</p>
+          </div>
         </div>
       </div>
-          </p>
+
+      <div class="row" id="statistics">
+        <div class="container" id="statistics">
+          <div class="col-xs-10 col-xs-offset-1">
+            <h2 class="p-title"><b>Statistics</b></h2>
+            <div class="row">
+
+              <img class="col-xs-12" width="100%" src="static/img/figure1.png">
+            </div>
+            <div class="row">
+              <br>
+              <img class="col-xs-6" width="100%" src="static/img/figure2.png">
+              <img class="col-xs-6" width="100%" src="static/img/figure3.png">
+            </div>
+            <br><br>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</footer>
 
-</body>
+      <div class="row" id="citation">
+        <div class="container">
+          <div class="col-xs-10 col-xs-offset-1">
+            <h2 class="p-title"><b>Citation</b></h2>
+            <p class="p-body">If you intend to publish results based on the Tencent-MVSE dataset, please kindly include the following reference:</p>
+                  <pre class="prettyprint lang-cv">
+@inproceedings{zeng2019tencent,
+  title={Tencent-MVSE: A Large-Scale Benchmark Dataset for Multi-Modal Video Similarity Evaluation},
+  author={Zhaoyang Zeng, Yongsheng Luo, Zhenhua Liu, Fengyun Rao, Dian Li, Weidong Guo, Zhen Wen},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2022}
+}
+</pre>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="row" id="block8">
+        <div class="col-xs-10 col-xs-offset-1">
+          <center>
+            <h5 style="color:white;">Copyright © 2022. Tencent QQ Browser Lab. All rights reserved.</h5>
+          </center>
+        </div>
+      </div>
+
+
+    </div>
+
+  </body>
 </html>
